@@ -8,9 +8,8 @@ PARI_VERSION=2.7.1
 
 echo "-----> Found pari_gp and will build the PARI/GP from scratch"
 
-curl -o $BUILD_DIR/pari-${PARI_VERSION}.tar.gz http://pari.math.u-bordeaux.fr/pub/pari/unix/pari-${PARI_VERSION}.tar.gz
-tar -zxvf $BUILD_DIR/pari-${PARI_VERSION}.tar.gz
+curl -o pari-${PARI_VERSION}.tar.gz http://pari.math.u-bordeaux.fr/pub/pari/unix/pari-${PARI_VERSION}.tar.gz
+tar -zxvf pari-${PARI_VERSION}.tar.gz
 
-cd $BUILD_DIR/pari-${PARI_VERSION}
-./Configure
-make install
+cd pari-${PARI_VERSION}
+./Configure && make install
