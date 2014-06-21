@@ -1,10 +1,16 @@
 #!/bin/sh
 
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+
+PARI_VERSION=2.7.1
+
 echo "-----> Found pari_gp and will build the PARI/GP from scratch"
 
-curl -o $2/pari-2.7.1.tar.gz http://pari.math.u-bordeaux.fr/pub/pari/unix/pari-2.7.1.tar.gz
-tar -zxvf $2/pari-2.7.1.tar.gz
+curl -o $BUILD_DIR/pari-${PARI_VERSION}.tar.gz http://pari.math.u-bordeaux.fr/pub/pari/unix/pari-${PARI_VERSION}.tar.gz
+tar -zxvf $BUILD_DIR/pari-${PARI_VERSION}.tar.gz
 
-cd $2/pari-2.7.1
+cd $BUILD_DIR/pari-${PARI_VERSION}
 ./Configure
 make install
