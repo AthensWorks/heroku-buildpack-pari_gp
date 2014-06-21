@@ -2,10 +2,9 @@
 
 echo "-----> Found pari_gp and will build the PARI/GP from scratch"
 
-mkdir /src
-curl -o /src/pari-2.7.1.tar.gz http://pari.math.u-bordeaux.fr/pub/pari/unix/pari-2.7.1.tar.gz
-tar -zxvf /src/pari-2.7.1.tar.gz
+curl -o $2/pari-2.7.1.tar.gz http://pari.math.u-bordeaux.fr/pub/pari/unix/pari-2.7.1.tar.gz
+tar -zxvf $2/pari-2.7.1.tar.gz
 
-cd /src/pari-2.7.1
+cd $2/pari-2.7.1
 ./Configure
 make install
