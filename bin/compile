@@ -12,4 +12,4 @@ curl -o pari-${PARI_VERSION}.tar.gz http://pari.math.u-bordeaux.fr/pub/pari/unix
 tar -zxvf pari-${PARI_VERSION}.tar.gz
 
 cd pari-${PARI_VERSION}
-./Configure --prefix=${BUILD_DIR}/bin/ && make gp && make install
+./Configure --static --prefix=${BUILD_DIR}/ && make gp && make install
