@@ -1,9 +1,7 @@
 #!/bin/sh
 
-echo "Building PARI GP"
-echo $BUILD_PARI_GP
-
-if [ $BUILD_PARI_GP == "true" ]; then
+if [ -f $1/pari_gp ]; then
+  echo "Installing the PARI/GP binares"
   exit 0
 else
   exit 1
